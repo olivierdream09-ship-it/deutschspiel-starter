@@ -1,0 +1,147 @@
+.game-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1.5rem 2rem;
+  border-radius: 15px;
+  margin-top: 2rem;
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(10px);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.controls-left,
+.controls-center,
+.controls-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.controls-center {
+  flex: 1;
+  justify-content: center;
+}
+
+.control-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.control-btn.primary {
+  background: var(--primary-500);
+  color: white;
+  box-shadow: var(--shadow-md);
+}
+
+.control-btn.primary:hover {
+  background: var(--primary-600);
+  box-shadow: var(--shadow-lg);
+}
+
+.control-btn.secondary {
+  background: var(--gray-200);
+  color: var(--gray-700);
+  border: 1px solid var(--gray-300);
+}
+
+.control-btn.secondary:hover {
+  background: var(--gray-300);
+  border-color: var(--gray-400);
+}
+
+.control-btn.help {
+  background: transparent;
+  color: var(--primary-600);
+  border: 2px solid var(--primary-500);
+}
+
+.control-btn.help:hover {
+  background: var(--primary-500);
+  color: white;
+}
+
+.live-stats {
+  display: flex;
+  gap: 1.5rem;
+  background: var(--gray-100);
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  border: 2px solid var(--primary-200);
+}
+
+.live-stat {
+  font-weight: 600;
+  color: var(--primary-700);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Animation pour les stats en direct */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(79, 70, 229, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(79, 70, 229, 0.6);
+  }
+}
+
+.live-stats {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .game-controls {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .controls-left,
+  .controls-center,
+  .controls-right {
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .controls-center {
+    order: -1;
+  }
+  
+  .live-stats {
+    padding: 0.5rem 1rem;
+    gap: 1rem;
+  }
+  
+  .control-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .controls-right {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .live-stats {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+}
