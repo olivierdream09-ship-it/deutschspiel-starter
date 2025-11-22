@@ -1,0 +1,148 @@
+.memory-game {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.memory-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
+  perspective: 1000px;
+}
+
+/* Responsive grid */
+@media (min-width: 768px) {
+  .memory-board {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .memory-board {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+/* Completion Overlay */
+.completion-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.completion-modal {
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: var(--shadow-xl);
+}
+
+.completion-content h2 {
+  color: var(--success-600);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.completion-content p {
+  color: var(--gray-600);
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.trophy {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.completion-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.completion-stats .stat {
+  background: var(--gray-50);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.completion-stats .value {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-600);
+  margin-bottom: 0.5rem;
+}
+
+.completion-stats .label {
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.play-again-btn {
+  background: var(--primary-500);
+  color: white;
+  border: none;
+  padding: 1.2rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 1rem;
+  box-shadow: var(--shadow-lg);
+  transition: all 0.3s ease;
+}
+
+.play-again-btn:hover {
+  background: var(--primary-600);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .memory-game {
+    padding: 1rem;
+  }
+  
+  .memory-board {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+  }
+  
+  .completion-modal {
+    padding: 2rem;
+  }
+  
+  .completion-content h2 {
+    font-size: 2rem;
+  }
+  
+  .completion-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .completion-stats .value {
+    font-size: 1.5rem;
+  }
+}
