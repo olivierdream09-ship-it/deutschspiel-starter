@@ -1,0 +1,96 @@
+.listening-game-page {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Réutilise les styles de GrammarGamePage et ajoute des spécificités */
+.game-types {
+  margin: 3rem 0;
+}
+
+.game-types h3 {
+  color: var(--primary-600);
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.exercise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.exercise-card {
+  background: var(--gray-50);
+  padding: 2rem 1.5rem;
+  border-radius: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.exercise-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-300);
+  box-shadow: var(--shadow-md);
+}
+
+.exercise-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.exercise-card h4 {
+  color: var(--gray-900);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.exercise-card p {
+  color: var(--gray-600);
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Animation spécifique pour Hörprofi */
+@keyframes sound-wave {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.5);
+  }
+}
+
+.game-icon {
+  position: relative;
+}
+
+.game-icon::after {
+  content: '🎶';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 2rem;
+  animation: sound-wave 1s ease-in-out infinite;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .exercise-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .exercise-card {
+    padding: 1.5rem 1rem;
+  }
+}
