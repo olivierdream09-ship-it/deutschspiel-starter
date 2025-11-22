@@ -1,4 +1,45 @@
-## 🎯 DeutschSpiel - Apprendre l'Allemand par le Jeu
+# DeutschSpiel - Apprendre l'Allemand par le Jeu
+
+![DeutschSpiel](https://img.shields.io/badge/DeutschSpiel-Plateforme%20Éducative-blue)
+![React](https://img.shields.io/badge/React-18.2.0-61dafb)
+![Node.js](https://img.shields.io/badge/Node.js-18.x-339933)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178c6)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-336791)
+
+## 📖 Description
+
+DeutschSpiel est une plateforme éducative interactive pour apprendre l'allemand à travers des jeux captivants. L'application propose différents types de jeux pour améliorer le vocabulaire, la grammaire et la compréhension orale.
+
+## 🎮 Fonctionnalités
+
+### Jeux Disponibles
+- **Memory** : Associer les mots allemands avec leurs traductions françaises
+- **Quiz de Grammaire** : Questions interactives sur la grammaire allemande
+- **Jeu d'Écoute** : Exercices de compréhension orale
+- **Système de Progression** : Suivi des scores et niveaux
+
+### Fonctionnalités Techniques
+- ✅ Interface React/TypeScript moderne
+- ✅ Backend Node.js/Express
+- ✅ Base de données PostgreSQL
+- ✅ Authentification utilisateur
+- ✅ Système d'administration
+- ✅ API RESTful
+- ✅ Responsive design
+
+## 🚀 Installation et Déploiement
+
+### Prérequis
+- Node.js 18+
+- PostgreSQL
+- Compte Vercel
+
+### Installation Locale
+
+1. **Cloner le repository**
+```bash
+git clone [votre-repo]
+cd deutschspiel## 🎯 DeutschSpiel - Apprendre l'Allemand par le Jeu
 
 ![DeutschSpiel](https://img.shields.io/badge/DeutschSpiel-Plateforme%20Éducative-blue)
 ![React](https://img.shields.io/badge/React-18.2.0-61dafb)
