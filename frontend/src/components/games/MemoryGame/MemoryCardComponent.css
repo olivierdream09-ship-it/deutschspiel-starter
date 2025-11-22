@@ -1,0 +1,183 @@
+.memory-card {
+  aspect-ratio: 3/4;
+  perspective: 1000px;
+  cursor: pointer;
+  position: relative;
+}
+
+.memory-card.disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.memory-card.matched {
+  cursor: default;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  box-shadow: var(--shadow-md);
+  border: 2px solid transparent;
+}
+
+/* Face avant */
+.card-front {
+  background: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-700) 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-front::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: rotate(45deg);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+.question-mark {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.card-hint {
+  font-size: 1.5rem;
+  opacity: 0.8;
+}
+
+/* Face arrière */
+.card-back {
+  background: white;
+  color: var(--gray-900);
+  transform: rotateY(180deg);
+  justify-content: space-between;
+  position: relative;
+}
+
+.memory-card.matched .card-back {
+  background: linear-gradient(135deg, var(--success-500) 0%, var(--success-600) 100%);
+  color: white;
+  border-color: var(--success-600);
+}
+
+.card-content {
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.article {
+  font-size: 0.8rem;
+  color: var(--gray-500);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.memory-card.matched .article {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.word {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  word-break: break-word;
+}
+
+.card-type-badge {
+  background: var(--gray-100);
+  color: var(--gray-700);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.memory-card.matched .card-type-badge {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.audio-button {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.audio-button:hover {
+  background: rgba(0, 0, 0, 0.1);
+  transform: scale(1.1);
+}
+
+.memory-card.matched .audio-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card-front,
+  .card-back {
+    padding: 0.75rem;
+  }
+  
+  .question-mark {
+    font-size: 2rem;
+  }
+  
+  .word {
+    font-size: 1rem;
+  }
+  
+  .card-type-badge {
+    font-size: 0.6rem;
+    padding: 0.2rem 0.5rem;
+  }
+}
